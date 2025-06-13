@@ -1,7 +1,4 @@
-# Bot Service Library 🤖📈
-
-![GitHub release](https://img.shields.io/github/release/kirti-bagul/Bot-Service-Library.svg)  
-[Download Latest Release](https://github.com/kirti-bagul/Bot-Service-Library/releases)
+# Trading Bot Library 🤖📈
 
 Welcome to the **Bot Service Library**, a comprehensive trading service bot library designed to simplify your trading experience across multiple platforms. This library supports various bots, including the gRpc Volume Bot, Bundler Bot, Sniping Bot, Copy Trading Bot, and Wallet Tracker. It operates seamlessly on both Solana and EVM networks, making it a versatile tool for traders.
 
@@ -154,13 +151,5 @@ Please ensure your code adheres to the existing style and includes tests where a
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
-
-For any questions or feedback, please reach out:
-
-- GitHub: [kirti-bagul](https://github.com/kirti-bagul)
-- Email: your_email@example.com
-
-For the latest updates and releases, visit the [Releases section](https://github.com/kirti-bagul/Bot-Service-Library/releases).
 
 Thank you for using the Bot Service Library! Happy trading!
